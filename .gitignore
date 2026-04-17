@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Sensitive information (Security)
+.env
+local_settings.py
+
+# Database (Keep SQLite local)
+db.sqlite3
+db.sqlite3-journal
+
+# Media and Static
+/static/
+/media/
+/*/static/
+/*/media/
+
+# Logs
+*.log
+
+# OS/Editor specific
+.DS_Store
+.vscode/
+.idea/
