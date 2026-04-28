@@ -1,1 +1,1 @@
-for a simple backend for my projects
+For my simple django profile backend for jobs along the way

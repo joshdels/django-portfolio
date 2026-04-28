@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "core",
-    "api",
+    "case_studies",
+    "projects",
 ]
 
 MIDDLEWARE = [
@@ -169,34 +170,3 @@ if IS_PROD:
 else:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
-
-
-# ----------------------------
-# LOGGING
-# ----------------------------
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
-            "style": "{",
-        },
-    },
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-        },
-    },
-    "root": {
-        "handlers": ["console"],
-        "level": "DEBUG",
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["console"],
-            "level": "ERROR",
-            "propagate": True,
-        },
-    },
-}
