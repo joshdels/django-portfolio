@@ -14,7 +14,7 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "\
+CMD ["uv", "run", "sh", "-c", "\
   python manage.py migrate --noinput && \
   python manage.py collectstatic --noinput && \
   gunicorn core.wsgi:application \
