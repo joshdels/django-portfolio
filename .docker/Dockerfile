@@ -6,11 +6,10 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install uv
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen
 
-COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 EXPOSE 8000

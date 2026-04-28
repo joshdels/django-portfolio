@@ -4,21 +4,19 @@ from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "django-insecure-79=$&%+-_mopp-!rpt%=%-d@2lw=3_!w=a37)p6e8^!zcbtkjd"
-
 load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 IS_PROD = os.getenv("IS_PROD", "False").lower() == "true"
 DEBUG = not IS_PROD
 
-ALLOWED_HOSTS = ["*"] if not IS_PROD else os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = ["*"]
 
 # ----------------------------
 # CORS
 # ----------------------------
-if IS_PROD:
-    CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
-else:
-    CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 # ----------------------------
 # INSTALLED APPS
